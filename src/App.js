@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyComponent from './MyComponent';
 import Component2 from './Component2';
+import Eventos from './Eventos';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <p>
           Hola
         </p>
+        <Eventos/>
         <MyComponent/>
         <Component2/>
       </header>

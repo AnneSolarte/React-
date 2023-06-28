@@ -18,7 +18,7 @@ const Component2 = () => {
     return (
         <div className="box">
             <hr/>
-            <h2>Movies</h2>
+            <h2>My component 2: Movies</h2>
 
             {movies.length >=1 ? 
             (<div>

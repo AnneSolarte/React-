@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import MyComponent from './MyComponent';
-import Component2 from './Component2';
-import State from './State';
+import Exercise from "./components/Exercise.js"
 
 function App() {
+  const date = new Date();
+  const yearNow = date.getFullYear();
 
   return (
     
@@ -14,9 +14,7 @@ function App() {
         <p>
           Hola
         </p>
-        <State/>
-        <MyComponent/>
-        <Component2/>
+        <Exercise year = {yearNow} />
       </header>
     </div>
   );

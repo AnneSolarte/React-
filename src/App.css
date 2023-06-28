@@ -41,3 +41,11 @@
   background-color: lightblue;
   padding: 1%;
 }
+
+.box{
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

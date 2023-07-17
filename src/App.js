@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Exercise from "./components/UseEffect"
+import {AjaxComponent} from './components/AjaxComponent';
 
 function App() {
-  const date = new Date();
-  const yearNow = date.getFullYear();
 
   return (
     
@@ -14,7 +13,8 @@ function App() {
         <p>
           Hola
         </p>
-        <Exercise year = {yearNow} />
+        <Exercise/>
+        <AjaxComponent/>
       </header>
     </div>
   );

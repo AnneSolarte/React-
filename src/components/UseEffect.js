@@ -44,7 +44,6 @@ return (
         <button onClick={moodDate}>Change to current date</button>
       
       </p>
-      { user == "Emi"  && <ShowComponent/>}
   </div>
   
 )

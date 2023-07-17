@@ -18,6 +18,12 @@ export default function Form() {
     setUser(dataUser);
   };
 
+   const changeDataUser = e => {
+    let inputName = e.target.name;
+
+    setUser(prevState => ( {...prevState, [inputName]: e.target.value} ));
+   }
+
   // Sólo se ejecuta una vez
   useEffect(() => {
     console.log("You have loaded the component");
@@ -27,9 +33,9 @@ export default function Form() {
     <div>
       <h3>Form</h3>
       <form onSubmit={getDataUser}>
-        <input type="text" placeholder="Name" name="nombre" />
-        <input type="text" placeholder="Apellido" name="apellido" />
-        <select name="signo">
+        <input type="text" placeholder="Name" name="nombre" onChange={changeDataUser} />
+        <input type="text" placeholder="Apellido" name="apellido" onChange={changeDataUser}/>
+        <select name="signo" onChange={changeDataUser}>
           <option value="aries">Acuario</option>
           <option value="tauro">Tauro</option>
           <option value="géminis">Géminis</option>

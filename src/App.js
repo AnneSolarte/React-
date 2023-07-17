@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Exercise from "./components/Exercise.js"
+import Exercise from "./components/UseEffect"
 
 function App() {
   const date = new Date();

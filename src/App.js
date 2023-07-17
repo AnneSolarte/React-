@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Exercise from "./components/UseEffect"
-import {AjaxComponent} from './components/AjaxComponent';
+import Form from './components/Form';
 
 function App() {
 
@@ -13,8 +12,7 @@ function App() {
         <p>
           Hola
         </p>
-        <Exercise/>
-        <AjaxComponent/>
+        <Form/>
       </header>
     </div>
   );

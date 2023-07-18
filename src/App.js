@@ -12,7 +12,6 @@ function App() {
         <p>
           Hola
         </p>
-        <Form/>
       </header>
     </div>
   );

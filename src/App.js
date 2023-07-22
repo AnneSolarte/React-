@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react'
+import React, { useState } from 'react'
 import { MoviesList } from './components/MoviesList';
 import { SearchBar } from './components/SearchBar';
 import { NavBar } from './components/NavBar';
@@ -10,6 +10,8 @@ import { AddMovie } from './components/AddMovie';
 
 function App() {
 
+    const [moviesList, setMoviesListState] = useState([]);
+    
   return (
     <div className='layout'>
 
@@ -20,12 +22,12 @@ function App() {
         <hr/>
 
         <section className="content">
-            <MoviesList />
+            <MoviesList moviesList={moviesList} setMoviesListState={setMoviesListState} />
         </section>
 
         <aside className='aside'>
             <SearchBar/>
-            <AddMovie/>
+            <AddMovie setMoviesListState={setMoviesListState}/>
             
             
         </aside>

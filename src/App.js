@@ -1,18 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Form from './components/Form';
+import React from 'react'
+import { MoviesList } from './components/MoviesList';
+import { SearchBar } from './components/SearchBar';
+import { NavBar } from './components/NavBar';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { AddMovie } from './components/AddMovie';
 
 function App() {
 
   return (
-    
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola
-        </p>
-      </header>
+    <div className='layout'>
+
+        <Header/>
+
+        <NavBar/>
+
+        <hr/>
+
+        <section className="content">
+            <MoviesList />
+        </section>
+
+        <aside className='aside'>
+            <SearchBar/>
+            <AddMovie/>
+            
+            
+        </aside>
+
+        <Footer/>
+
     </div>
   );
 }

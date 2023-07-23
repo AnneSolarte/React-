@@ -215,3 +215,7 @@ body{
   background-color: #2ea21c;
   transform: scale(1.05,1.05);
 }
+
+.notFound{
+  color: #FF0E1F;
+}

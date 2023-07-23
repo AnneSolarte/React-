@@ -26,7 +26,7 @@ function App() {
         </section>
 
         <aside className='aside'>
-            <SearchBar/>
+            <SearchBar moviesList={moviesList} setMoviesListState={setMoviesListState}/>
             <AddMovie setMoviesListState={setMoviesListState}/>
             
             

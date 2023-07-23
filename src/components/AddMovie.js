@@ -22,7 +22,7 @@ export const AddMovie = ({setMoviesListState}) => {
     let movie = {
       id: new Date().getTime(),
       tittle,
-      description
+      description,
     }
 
     setMovieState(movie);

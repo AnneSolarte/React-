@@ -5,7 +5,10 @@ import { Router } from './routers/Router';
 
 function App() {
   return (
-    <Router/>
+    <div className='layout'>
+      <Router/>
+    </div>
+    
   );
 }
 

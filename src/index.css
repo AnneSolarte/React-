@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #444;
+  background-color: #050411;
 }
 
 code {
@@ -27,3 +27,58 @@ code {
   font-weight: 100;
   text-decoration: none;
 }
+
+.layout{
+  width: 95%;
+  margin: 0px auto;
+
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-bottom: 2%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.head span{
+  font-weight: bold;
+  font-size:xx-large;
+  margin-right: 2%;
+}
+
+.header head, nav{
+  flex: 1 1 auto ;
+}
+
+.header nav ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+.nav li{
+  font-weight: bold;
+  margin-left: 2%;
+}
+
+.nav a{
+  text-decoration: none;
+  color: aliceblue;
+  transition: all 300ms;
+}
+
+.nav a:hover{
+  color: #159191;
+  font-weight: bold;
+  scale: (1.1,1.1);
+}
+
+

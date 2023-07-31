@@ -1,49 +1,94 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useReducer } from 'react'
+import { gameReducer } from '../reducers/gameReducer';
+
+const init = () => {
+  return JSON.parse(localStorage.getItem("games")) || [];
+  
+}
 
 export const Form = () => {
 
-  const nameInput = useRef();
-  const emailInput = useRef();
-  const messageInput = useRef();
-  const boxRef = useRef();
+  const [ games, dispatch] = useReducer( gameReducer, [], init);
 
+  useEffect(()=>{
+    localStorage.setItem("games", JSON.stringify(games));
+  }, [games])
 
-  const showForm = (e) => {
+  const addGame = (e) => {
     e.preventDefault();
 
-    let name = nameInput.current.value;
-    let email = emailInput.current.value;
-    let messa = messageInput.current.value;
-
-    let form = {
-      name,
-      email,
-      messa
+    let game = {
+      id: new Date().getTime(),
+      name: e.target.name.value,
+      description: e.target.description.value,
     }
 
-    console.log(form)
-    console.log(boxRef)
-    let {current: box} = boxRef;
-    box.classList.add("send");
-    box.innerHTML = "Form send"
+    console.log(game)
 
+    const addAction = {
+      type: "add",
+      payload: game
+    }
+
+    dispatch(addAction);
+  }
+
+  const deleteGame = (id) => {
+    
+    const deleteAction = {
+      type: "delete",
+      payload: id
+    }
+
+    dispatch(deleteAction);
+
+  }
+
+  const editGame = (e, id, des) => {
+
+    let game = {
+      id,
+      name: e.target.value,
+      description: des,
+    }
+    
+    const editAction = {
+      type: "edit",
+      payload: game
+    }
+
+    dispatch(editAction);
 
   }
 
   return (
     <div className='content'>
       
-      <div ref={boxRef}>
-          <h3>Form</h3>
+      <div>
+          <h3>Videogames</h3>
       </div>
           
+      <div>
+          <h4>GamesList: {games.length} </h4>
+
+          {
+            games.map((game)=> (
+              <li key={game.id}>
+                {game.name} {game.description}
+                &nbsp;
+                <button onClick={e => deleteGame(game.id)}>X</button>
+                &nbsp;
+                <input type='text' onBlur={e => editGame(e, game.id, game.description)}/>
+              </li>
+            ))
+          }
+      </div>
       
       <div className='form'>
 
-          <form onSubmit={showForm}>
-            <input type='text' placeholder='Name' ref={nameInput}/>
-            <input type='email' placeholder='Email'  ref={emailInput}/>
-            <textarea placeholder='Message' ref={messageInput}/>
+          <form onSubmit={addGame}>
+            <input type='text' placeholder='Name' name='name'/>
+            <input type='text' placeholder='Description' name='description' />
             <input type='submit' value="Send"/>
           </form>
 

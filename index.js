@@ -14,6 +14,11 @@ app.use(cors());
 //Turn body to object js
 app.use(express.json());
 
+//ROUTES
+const routers_article = require("./Routes/article")
+
+app.use("/api", routers_article);
+
 //Create routes
 app.get("/test", (req, res) => {
     console.log("test endpoint");

@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const connection = async() => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/myblog");
+        await mongoose.connect("mongodb://localhost:27017/my_blog");
     } catch (error) {
-        throw new Error("Failed to connect");
+        Error("Failed to connect");
     }
 }
 
